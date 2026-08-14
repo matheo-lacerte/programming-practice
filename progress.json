@@ -1,0 +1,24 @@
+{
+  "current_day": 1,
+  "current_difficulty": 1,
+  "rotation": [
+    "Java",
+    "Python"
+  ],
+  "sessions": {
+    "Day1": {
+      "focus": "Java",
+      "topic": "Methods + parameters",
+      "difficulty": 1,
+      "status": "completed",
+      "completed_at": "2026-08-14",
+      "notes": "Completed Java methods, loops, debugging, and highest-value challenge. Reviewed Python append()."
+    },
+    "TestDay2": {
+      "focus": "Python",
+      "topic": "Functions + Lists",
+      "difficulty": 1,
+      "status": "test"
+    }
+  }
+}

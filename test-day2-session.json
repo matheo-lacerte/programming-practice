@@ -1,0 +1,83 @@
+{
+  "day": "TestDay2",
+  "focus": "Python",
+  "topic": "Functions + Lists",
+  "difficulty": 1,
+  "status": "test",
+  "miniLesson": {
+    "title": "Functions can return new lists.",
+    "body": "Use a loop to inspect each item, append the items you want to keep, then return the final list.",
+    "examples": [
+      {
+        "label": "Python",
+        "code": "def keep_positive(numbers):\n    result = []\n\n    for number in numbers:\n        if number > 0:\n            result.append(number)\n\n    return result"
+      }
+    ]
+  },
+  "exercises": [
+    {
+      "id": "Exercise1",
+      "title": "Keep even numbers",
+      "file": "Exercise1KeepEven.py",
+      "type": "python",
+      "function": "keep_even",
+      "method": "keep_even",
+      "goal": "Return a new list containing only the even numbers.",
+      "expected": ["[2, 8, 10]"],
+      "hints": [
+        "Start with an empty result list.",
+        "Use number % 2 == 0 to detect even numbers.",
+        "Append matching numbers, then return the result list."
+      ],
+      "starterCode": "def keep_even(numbers):\n    # YOUR CODE\n    pass\n\n\nprint(keep_even([2, 5, 8, 3, 10]))\n# expected: [2, 8, 10]\n"
+    },
+    {
+      "id": "Exercise2",
+      "title": "Count short words",
+      "file": "Exercise2CountShortWords.py",
+      "type": "python",
+      "function": "count_short_words",
+      "method": "count_short_words",
+      "goal": "Return how many words have 3 letters or fewer.",
+      "expected": ["3"],
+      "hints": [
+        "Use a counter that starts at 0.",
+        "Use len(word) to check the length.",
+        "Increase the counter only when len(word) <= 3."
+      ],
+      "starterCode": "def count_short_words(words):\n    # YOUR CODE\n    pass\n\n\nprint(count_short_words([\"cat\", \"table\", \"sun\", \"python\", \"dog\"]))\n# expected: 3\n"
+    },
+    {
+      "id": "Exercise3",
+      "title": "Debug total",
+      "file": "Exercise3DebugTotal.py",
+      "type": "python",
+      "function": "calculate_total",
+      "method": "calculate_total",
+      "goal": "Fix the function so it returns the sum of all numbers.",
+      "expected": ["25"],
+      "hints": [
+        "The loop is visiting each number correctly.",
+        "The bug is that total gets replaced instead of increased.",
+        "Think about total = number versus total += number."
+      ],
+      "starterCode": "def calculate_total(numbers):\n    total = 0\n\n    for number in numbers:\n        total = number\n\n    return total\n\n\nprint(calculate_total([5, 10, 7, 3]))\n# expected: 25\n"
+    },
+    {
+      "id": "JavaRefresher",
+      "title": "Java refresher",
+      "file": "JavaRefresher.java",
+      "type": "java",
+      "class": "JavaRefresher",
+      "method": "triple",
+      "goal": "Complete the method so it returns the number multiplied by 3.",
+      "expected": ["18", "-12"],
+      "hints": [
+        "The method returns an int.",
+        "Multiplication in Java uses *.",
+        "Return number * 3."
+      ],
+      "starterCode": "public class JavaRefresher {\n    public static int triple(int number) {\n        // YOUR CODE\n        throw new UnsupportedOperationException(\"Write your code here\");\n    }\n\n    public static void main(String[] args) {\n        System.out.println(triple(6));\n        System.out.println(triple(-4));\n    }\n}\n"
+    }
+  ]
+}

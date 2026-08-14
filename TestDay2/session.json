@@ -1,0 +1,79 @@
+{
+  "day": "TestDay2",
+  "focus": "Python",
+  "topic": "Functions + Lists",
+  "difficulty": 1,
+  "mini_lesson": {
+    "title": "Functions can return new lists.",
+    "body": "Use a loop to inspect each item, append the items you want to keep, then return the final list.",
+    "examples": [
+      {
+        "label": "Python",
+        "code": "def keep_positive(numbers):\n    result = []\n\n    for number in numbers:\n        if number > 0:\n            result.append(number)\n\n    return result"
+      }
+    ]
+  },
+  "exercises": {
+    "Exercise1": {
+      "file": "Exercise1KeepEven.py",
+      "type": "python",
+      "class": "",
+      "function": "keep_even",
+      "method": "keep_even",
+      "visible_expected": [
+        "[2, 8, 10]"
+      ],
+      "hints": [
+        "Start with an empty result list.",
+        "Use number % 2 == 0 to detect even numbers.",
+        "Append matching numbers, then return the result list."
+      ]
+    },
+    "Exercise2": {
+      "file": "Exercise2CountShortWords.py",
+      "type": "python",
+      "class": "",
+      "function": "count_short_words",
+      "method": "count_short_words",
+      "visible_expected": [
+        "3"
+      ],
+      "hints": [
+        "Use a counter that starts at 0.",
+        "Use len(word) to check the length.",
+        "Increase the counter only when len(word) <= 3."
+      ]
+    },
+    "Exercise3": {
+      "file": "Exercise3DebugTotal.py",
+      "type": "python",
+      "class": "",
+      "function": "calculate_total",
+      "method": "calculate_total",
+      "visible_expected": [
+        "25"
+      ],
+      "hints": [
+        "The loop is visiting each number correctly.",
+        "The bug is that total gets replaced instead of increased.",
+        "Think about total = number versus total += number."
+      ]
+    },
+    "JavaRefresher": {
+      "file": "JavaRefresher.java",
+      "type": "java",
+      "class": "JavaRefresher",
+      "function": "triple",
+      "method": "triple",
+      "visible_expected": [
+        "18",
+        "-12"
+      ],
+      "hints": [
+        "The method returns an int.",
+        "Multiplication in Java uses *.",
+        "Return number * 3."
+      ]
+    }
+  }
+}

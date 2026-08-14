@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Programming Practice</title>
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" aria-label="Practice navigation">
+        <div class="brand">
+          <span class="brand-mark" aria-hidden="true">P</span>
+          <div>
+            <strong>Practice</strong>
+            <span>Python + Java</span>
+          </div>
+        </div>
+
+        <nav class="tabs" aria-label="Sections">
+          <button class="tab active" type="button" data-view="session">Session</button>
+          <button class="tab" type="button" data-view="hints">Hints</button>
+          <button class="tab" type="button" data-view="review">Review</button>
+          <button class="tab" type="button" data-view="import">Import</button>
+          <button class="tab" type="button" data-view="manage">Manage</button>
+          <button class="tab" type="button" data-view="setup">Setup</button>
+        </nav>
+
+        <div class="status-panel">
+          <span class="eyebrow">Current</span>
+          <strong id="sideDay">Day1</strong>
+          <span id="sideDifficulty">Difficulty 1</span>
+          <span class="status-badge" id="sideStatus">Completed</span>
+        </div>
+      </aside>
+
+      <main class="main">
+        <section class="topbar" aria-label="Session summary">
+          <div>
+            <span class="eyebrow" id="focusLabel">Java Focus</span>
+            <h1 id="topicTitle">Methods + Parameters</h1>
+          </div>
+          <div class="meter" aria-label="Exercise completion">
+            <span id="progressText">0 of 4 checked</span>
+            <div class="meter-track">
+              <span id="progressFill"></span>
+            </div>
+          </div>
+        </section>
+
+        <section class="view active" id="session">
+          <div class="platform-strip" aria-label="Practice timer">
+            <div class="timer-card">
+              <span class="eyebrow">Timer</span>
+              <strong id="timerDisplay">30:00</strong>
+              <div class="button-row">
+                <button class="hint-button" type="button" id="startTimerButton">Start</button>
+                <button class="ghost-button" type="button" id="pauseTimerButton">Pause</button>
+                <button class="ghost-button" type="button" id="resetTimerButton">Reset</button>
+              </div>
+            </div>
+            <div class="timer-card">
+              <span class="eyebrow">Flow</span>
+              <strong id="phaseLabel">Mini-lesson</strong>
+              <p class="quiet">30 min: lesson, exercises, debugging, review.</p>
+            </div>
+          </div>
+
+          <div class="session-switcher">
+            <label>
+              <span>Session</span>
+              <select id="sessionSelect"></select>
+            </label>
+          </div>
+
+          <div class="quick-actions" aria-label="Active session commands">
+            <button class="copy-command" type="button" id="copyRunCommand">Copy run command</button>
+            <button class="copy-command" type="button" id="copyHintCommand">Copy first hint command</button>
+            <button class="ghost-button" type="button" id="stuckButton">I'm stuck</button>
+            <button class="ghost-button" type="button" id="resetSessionButton">Reset current checks</button>
+          </div>
+
+          <div class="stuck-panel" id="stuckPanel" hidden>
+            <div>
+              <span class="eyebrow">Tutor Mode</span>
+              <h3>What kind of stuck?</h3>
+            </div>
+            <div class="button-row">
+              <button class="ghost-button" type="button" data-stuck="start">I do not know where to start</button>
+              <button class="ghost-button" type="button" data-stuck="output">My output is wrong</button>
+              <button class="ghost-button" type="button" data-stuck="error">I have an error</button>
+            </div>
+            <p id="stuckAdvice" class="hint-text">Pick the closest situation and I will nudge you without giving away the answer.</p>
+          </div>
+
+          <div class="lesson-band">
+            <div>
+              <span class="eyebrow">Mini-Lesson</span>
+              <h2 id="lessonTitle">Java methods look like Python functions with types.</h2>
+              <p id="lessonBody"></p>
+            </div>
+            <div class="code-pair" id="lessonExamples"></div>
+          </div>
+
+          <div class="exercise-grid" id="exerciseGrid"></div>
+        </section>
+
+        <section class="view" id="hints">
+          <div class="section-heading">
+            <span class="eyebrow">Hints</span>
+            <h2>Reveal only what you need.</h2>
+          </div>
+          <div class="hint-list" id="hintList"></div>
+        </section>
+
+        <section class="view" id="review">
+          <div class="section-heading">
+            <span class="eyebrow">Review</span>
+            <h2>Mistake log</h2>
+          </div>
+          <div class="review-grid">
+            <article class="review-card">
+              <h3>Python list reminder</h3>
+              <p><code>append(value)</code> adds one item to the end of a list.</p>
+            </article>
+            <article class="review-card">
+              <h3>Accumulation</h3>
+              <p><code>total = number</code> replaces. <code>total += number</code> adds onto the current value.</p>
+            </article>
+            <article class="review-card">
+              <h3>Array starting points</h3>
+              <p>For highest or lowest values, start from <code>scores[0]</code> when negatives are possible.</p>
+            </article>
+          </div>
+          <label class="notes-box">
+            <span>Personal notes for this session</span>
+            <textarea id="notesInput" rows="7" placeholder="Write anything you want to remember..."></textarea>
+          </label>
+        </section>
+
+        <section class="view" id="import">
+          <div class="section-heading">
+            <span class="eyebrow">Import</span>
+            <h2>Add a scheduled session package.</h2>
+          </div>
+          <div class="import-layout">
+            <section class="import-panel">
+              <label class="file-picker">
+                <span>Import JSON file</span>
+                <input id="sessionFile" type="file" accept="application/json,.json">
+              </label>
+              <label class="notes-box">
+                <span>Or paste JSON</span>
+                <textarea id="importText" rows="14" placeholder="Paste the session package here..."></textarea>
+              </label>
+              <div class="button-row">
+                <button class="hint-button" type="button" id="importButton">Import session</button>
+                <button class="ghost-button" type="button" id="sampleButton">Show format</button>
+                <button class="ghost-button" type="button" id="exportButton">Export app data</button>
+              </div>
+              <p class="quiet" id="importMessage">A session package includes the day, focus, prompts, expected outputs, and hint ladder.</p>
+            </section>
+            <section class="import-panel">
+              <h3>Session package format</h3>
+              <pre><code id="sampleJson"></code></pre>
+            </section>
+          </div>
+        </section>
+
+        <section class="view" id="manage">
+          <div class="section-heading">
+            <span class="eyebrow">Manage</span>
+            <h2>Session library</h2>
+          </div>
+          <div class="manage-layout">
+            <section class="import-panel">
+              <h3>Current session</h3>
+              <p id="manageSummary" class="quiet"></p>
+              <div class="button-row">
+                <button class="ghost-button danger-button" type="button" id="deleteSessionButton">Delete current session</button>
+                <button class="ghost-button" type="button" id="resetAllButton">Reset all app data</button>
+              </div>
+              <p class="quiet" id="manageMessage">Deleting removes the session from this app only. It does not delete files from your project folder.</p>
+            </section>
+            <section class="import-panel">
+              <h3>All sessions</h3>
+              <div class="session-list" id="sessionList"></div>
+            </section>
+          </div>
+        </section>
+
+        <section class="view" id="setup">
+          <div class="section-heading">
+            <span class="eyebrow">Local Tools</span>
+            <h2>Use the app with your terminal runner.</h2>
+          </div>
+          <div class="command-stack">
+            <button class="copy-command" type="button" data-copy="cd /home/matheo/Documents/Projet/learning">cd /home/matheo/Documents/Projet/learning</button>
+            <button class="copy-command" type="button" data-copy="python3 tutor.py status">python3 tutor.py status</button>
+            <button class="copy-command" type="button" data-copy="python3 tutor.py run Day1">python3 tutor.py run Day1</button>
+            <button class="copy-command" type="button" data-copy="python3 tutor.py hint Day1 Exercise1">python3 tutor.py hint Day1 Exercise1</button>
+            <button class="copy-command" type="button" data-copy="python3 tutor.py import session-pack.json">python3 tutor.py import session-pack.json</button>
+          </div>
+          <p class="quiet">Future sessions stay controlled by your scheduled ChatGPT practice. This app waits for the next real session instead of creating one early.</p>
+        </section>
+      </main>
+    </div>
+
+    <script src="./app.js"></script>
+  </body>
+</html>

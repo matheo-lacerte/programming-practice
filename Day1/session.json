@@ -1,0 +1,56 @@
+{
+  "day": "Day1",
+  "focus": "Java",
+  "topic": "Methods + parameters",
+  "difficulty": 1,
+  "exercises": {
+    "Exercise1": {
+      "file": "Exercise1IsPositive.java",
+      "type": "java",
+      "class": "Exercise1IsPositive",
+      "method": "isPositive",
+      "visible_expected": ["true", "false", "false"],
+      "hints": [
+        "A positive number is greater than zero.",
+        "The method returns a boolean, so the condition itself can become the returned value.",
+        "You only need to compare number with 0."
+      ]
+    },
+    "Exercise2": {
+      "file": "Exercise2CountEven.java",
+      "type": "java",
+      "class": "Exercise2CountEven",
+      "method": "countEven",
+      "visible_expected": ["3"],
+      "hints": [
+        "Use a counter that starts at 0.",
+        "Loop through every number and check if it is divisible by 2.",
+        "The modulo operator `%` tells you the remainder."
+      ]
+    },
+    "Exercise3": {
+      "file": "Exercise3Debugging.java",
+      "type": "java",
+      "class": "Exercise3Debugging",
+      "method": "calculateTotal",
+      "visible_expected": ["25"],
+      "hints": [
+        "The bug is inside the loop.",
+        "The code should keep adding each number to total.",
+        "Think about the difference between replacing and accumulating."
+      ]
+    },
+    "FinalChallenge": {
+      "file": "FinalChallengeFindHighest.java",
+      "type": "java",
+      "class": "FinalChallengeFindHighest",
+      "method": "findHighest",
+      "visible_expected": ["97", "-4"],
+      "hints": [
+        "Start by assuming one score is the highest.",
+        "Compare every score to the current highest.",
+        "Initializing with 0 will fail for all-negative arrays."
+      ]
+    }
+  }
+}

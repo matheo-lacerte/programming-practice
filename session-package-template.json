@@ -1,0 +1,35 @@
+{
+  "day": "Day2",
+  "focus": "Python",
+  "topic": "Functions + Lists",
+  "difficulty": 1,
+  "status": "scheduled",
+  "miniLesson": {
+    "title": "One concise lesson title.",
+    "body": "One or two practical sentences.",
+    "examples": [
+      {
+        "label": "Python",
+        "code": "def example():\n    return 123"
+      }
+    ]
+  },
+  "exercises": [
+    {
+      "id": "Exercise1",
+      "title": "Exercise title",
+      "file": "Exercise1.py",
+      "type": "python",
+      "function": "function_name",
+      "method": "function_name",
+      "goal": "What the learner needs to make the code do.",
+      "expected": ["expected output line"],
+      "hints": [
+        "Hint 1: concept only.",
+        "Hint 2: point toward the operation.",
+        "Hint 3: close to the fix, still not a full solution."
+      ],
+      "starterCode": "def function_name():\n    # YOUR CODE\n    pass\n\nprint(function_name())\n"
+    }
+  ]
+}
