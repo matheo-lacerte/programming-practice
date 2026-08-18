@@ -1,0 +1,99 @@
+{
+  "day": "Day2",
+  "focus": "Python",
+  "topic": "Building data while looping",
+  "difficulty": 2,
+  "status": "scheduled",
+  "miniLesson": {
+    "title": "Build a new list while looping.",
+    "body": "Start with an empty result list, loop through the input, check each value, transform it when needed, append it to result, then return the final list.",
+    "examples": [
+      {
+        "label": "Python",
+        "code": "numbers = [3, 8, 2, 11, 6]\nresult = []\n\nfor number in numbers:\n    if number > 5:\n        result.append(number * 2)\n\nprint(result)\n# [16, 22, 12]"
+      }
+    ]
+  },
+  "exercises": [
+    {
+      "id": "Exercise1",
+      "title": "Get negative numbers",
+      "file": "Exercise1GetNegative.py",
+      "type": "python",
+      "function": "get_negative",
+      "method": "get_negative",
+      "goal": "Create and return a new list containing only the negative numbers. Do not modify the original list.",
+      "expected": ["[-2, -9, -3]"],
+      "hints": [
+        "Start with an empty result list.",
+        "A negative number is less than 0.",
+        "Append only the numbers where number < 0, then return result."
+      ],
+      "starterCode": "def get_negative(numbers):\n    # YOUR CODE\n    pass\n\n\nnumbers = [4, -2, 7, -9, 0, -3]\nprint(get_negative(numbers))\n# expected: [-2, -9, -3]\n"
+    },
+    {
+      "id": "Exercise2",
+      "title": "Double even numbers",
+      "file": "Exercise2DoubleEven.py",
+      "type": "python",
+      "function": "double_even",
+      "method": "double_even",
+      "goal": "Ignore odd numbers, double every even number, put the doubled values into a new list, and return that list.",
+      "expected": ["[16, 24, 4]"],
+      "hints": [
+        "Use number % 2 == 0 to check if a number is even.",
+        "Append number * 2, not the original number.",
+        "Only append inside the if block, then return result after the loop."
+      ],
+      "starterCode": "def double_even(numbers):\n    # YOUR CODE\n    pass\n\n\nnumbers = [5, 8, 3, 12, 7, 2]\nprint(double_even(numbers))\n# expected: [16, 24, 4]\n"
+    },
+    {
+      "id": "Exercise3",
+      "title": "Debug passing grades",
+      "file": "Exercise3CountPassing.py",
+      "type": "python",
+      "function": "count_passing",
+      "method": "count_passing",
+      "goal": "Fix the function so it counts how many grades are passing. A passing grade is 60 or higher.",
+      "expected": ["4"],
+      "hints": [
+        "The if condition is correct.",
+        "The bug is that passing gets reset to 1 instead of increasing.",
+        "Use passing += 1 when a grade is passing."
+      ],
+      "starterCode": "def count_passing(grades):\n    passing = 0\n\n    for grade in grades:\n        if grade >= 60:\n            passing = 1\n\n    return passing\n\n\ngrades = [75, 42, 88, 59, 60, 91]\nprint(count_passing(grades))\n# expected: 4\n"
+    },
+    {
+      "id": "JavaRefresher",
+      "title": "Predict Java loop output",
+      "file": "JavaRefresherCalculate.java",
+      "type": "java",
+      "class": "JavaRefresherCalculate",
+      "method": "calculate",
+      "goal": "Predict the output before running the program. Work through the array mentally and choose A) 15, B) 25, C) 35, or D) 10.",
+      "expected": ["25"],
+      "hints": [
+        "Only numbers greater than 5 are added.",
+        "From {3, 8, 2, 10, 5, 7}, the qualifying values are 8, 10, and 7.",
+        "8 + 10 + 7 equals 25."
+      ],
+      "starterCode": "public class JavaRefresherCalculate {\n    public static int calculate(int[] numbers) {\n        int result = 0;\n\n        for (int number : numbers) {\n            if (number > 5) {\n                result += number;\n            }\n        }\n\n        return result;\n    }\n\n    public static void main(String[] args) {\n        int[] values = {3, 8, 2, 10, 5, 7};\n        System.out.println(calculate(values));\n    }\n}\n"
+    },
+    {
+      "id": "FinalChallenge",
+      "title": "Analyze numbers",
+      "file": "FinalChallengeAnalyzeNumbers.py",
+      "type": "python",
+      "function": "analyze_numbers",
+      "method": "analyze_numbers",
+      "goal": "Return a list containing numbers that are even and greater than 10, divided by 2. Bonus: return integers without using int().",
+      "expected": ["[6, 10, 15, 8]"],
+      "hints": [
+        "You need two checks: even and greater than 10.",
+        "Use and to combine the conditions.",
+        "Use number // 2 for integer division without int()."
+      ],
+      "starterCode": "def analyze_numbers(numbers):\n    # YOUR CODE\n    pass\n\n\nnumbers = [5, 12, 20, 7, 8, 30, 11, 16]\nprint(analyze_numbers(numbers))\n# expected: [6, 10, 15, 8]\n"
+    }
+  ]
+}

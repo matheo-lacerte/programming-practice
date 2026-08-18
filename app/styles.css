@@ -316,6 +316,28 @@ pre code {
   font-weight: 800;
 }
 
+.status-select,
+.answer-box {
+  display: grid;
+  gap: 8px;
+  color: var(--muted);
+  font-weight: 800;
+}
+
+.status-select select {
+  width: 100%;
+  min-height: 38px;
+  font-weight: 800;
+}
+
+.answer-box textarea {
+  min-height: 72px;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
 .check-row {
   display: flex;
   align-items: center;
@@ -344,6 +366,31 @@ pre code {
   font-family: "SFMono-Regular", Consolas, monospace;
   font-size: 12px;
   font-weight: 800;
+}
+
+.choice-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.choice-option {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  min-height: 42px;
+  padding: 10px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fbfcfa;
+  color: var(--ink);
+  font-weight: 800;
+}
+
+.choice-option input {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--blue);
 }
 
 .section-heading {
@@ -389,6 +436,13 @@ button:disabled {
   color: #9b2f2a;
 }
 
+.compact-button {
+  width: max-content;
+  min-height: 34px;
+  padding: 7px 10px;
+  font-size: 13px;
+}
+
 .hint-text {
   grid-column: 1 / -1;
   padding: 12px;
@@ -403,9 +457,57 @@ button:disabled {
   margin-bottom: 14px;
 }
 
+.summary-grid {
+  margin-top: 4px;
+}
+
 .review-card {
   display: grid;
   gap: 8px;
+}
+
+.segmented {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+}
+
+.segmented button {
+  min-height: 36px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel);
+  color: var(--ink);
+  cursor: pointer;
+  font-weight: 800;
+}
+
+.segmented button.active {
+  border-color: var(--green);
+  background: var(--green-soft);
+  color: var(--green);
+}
+
+.mistake-list {
+  display: grid;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.mistake-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 12px;
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel);
+  box-shadow: var(--shadow);
+}
+
+.mistake-card p,
+.mistake-card details {
+  grid-column: 1 / -1;
 }
 
 .notes-box {
@@ -481,7 +583,8 @@ textarea {
   gap: 10px;
 }
 
-.starter-code summary {
+.starter-code summary,
+.practice-notes summary {
   width: max-content;
   cursor: pointer;
   color: var(--blue);
@@ -490,6 +593,34 @@ textarea {
 
 .starter-code pre {
   max-height: 240px;
+}
+
+.exercise-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: start;
+}
+
+.practice-notes {
+  display: grid;
+  gap: 10px;
+  padding: 10px 0 0;
+  border-top: 1px solid var(--line);
+}
+
+.practice-notes[open] {
+  gap: 12px;
+}
+
+.solution-panel {
+  display: grid;
+  gap: 10px;
+}
+
+.solution-panel pre {
+  border: 1px solid rgba(45, 106, 79, 0.22);
+  background: #10241c;
 }
 
 .import-layout {
@@ -513,6 +644,15 @@ textarea {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
+}
+
+.preview-message {
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fbfcfa;
+  color: var(--blue);
+  font-weight: 800;
 }
 
 .manage-layout {
@@ -612,6 +752,12 @@ textarea {
 
   .hint-card,
   .exercise-card header {
+    grid-template-columns: 1fr;
+  }
+
+  .choice-grid,
+  .segmented,
+  .mistake-card {
     grid-template-columns: 1fr;
   }
 }

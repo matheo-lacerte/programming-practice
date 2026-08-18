@@ -132,6 +132,25 @@
               <p>For highest or lowest values, start from <code>scores[0]</code> when negatives are possible.</p>
             </article>
           </div>
+          <div class="review-grid summary-grid">
+            <article class="review-card">
+              <h3>Session summary</h3>
+              <p id="completionSummary"><code>0</code> exercises completed.</p>
+            </article>
+            <article class="review-card">
+              <h3>Hint usage</h3>
+              <p id="hintSummary"><code>0</code> hints revealed.</p>
+            </article>
+            <article class="review-card">
+              <h3>Difficulty</h3>
+              <div class="segmented" id="difficultyControls" aria-label="Session difficulty">
+                <button type="button" data-difficulty-feedback="easy">Easy</button>
+                <button type="button" data-difficulty-feedback="okay">Okay</button>
+                <button type="button" data-difficulty-feedback="hard">Hard</button>
+              </div>
+            </article>
+          </div>
+          <div class="mistake-list" id="mistakeList"></div>
           <label class="notes-box">
             <span>Personal notes for this session</span>
             <textarea id="notesInput" rows="7" placeholder="Write anything you want to remember..."></textarea>
@@ -158,6 +177,7 @@
                 <button class="ghost-button" type="button" id="sampleButton">Show format</button>
                 <button class="ghost-button" type="button" id="exportButton">Export app data</button>
               </div>
+              <p class="preview-message" id="importPreview">No session preview yet.</p>
               <p class="quiet" id="importMessage">A session package includes the day, focus, prompts, expected outputs, and hint ladder.</p>
             </section>
             <section class="import-panel">
